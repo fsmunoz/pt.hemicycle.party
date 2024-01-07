@@ -14,6 +14,35 @@
          {
              position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
          }
+         div[class^="embeddedAppMetaInfoBar"] {
+             visibility=hidden !important;
+         }
+
+        .hidefooter {
+            position: absolute;
+            width: 100%;
+            height: 35px;
+            padding: 0px;
+            background: rgb(242,240,246);
+            right: 0px;
+            bottom: 0px;
+            z-index: 2;
+            display: block;
+         }
+         .footer {
+             position: absolute;
+             margin: auto;
+             width: 100%;
+             top: 50%;
+             transform: translateY(-50%);
+             -ms-transform: translateY(-50%);
+             color: rgb(0, 0, 0);
+             font-family: "Source Serif Pro", serif;
+             font-size: 1rem;
+             vertical-align: middle;
+             text-align: center;
+
+         }
 
         </style>
 
@@ -29,7 +58,37 @@
     </head>
     <body>
         <div id="content">
+            <div class="hidefooter">
+                <div class="footer">
+               Dados das votações <a href="https://github.com/fsmunoz/proc-parl-pt">p3: dados da actividade parlamentar, com</a> base em <a href="https://www.parlamento.pt/Cidadania/Paginas/DadosAbertos.aspx"> dados aberto da Assembleia da República </a> © 2023-2024 <a href="https://www.linkedin.com/in/fsmunoz/">Frederico Muñoz</a> Código <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPLv3</a>, conteúdo <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
+            target="_blank"
+            rel="license noopener noreferrer"
+            style="display: inline-block"
+            >CC BY-SA 4.0<img
+              style="
+                height: 16px !important;
+                margin-left: 3px;
+                vertical-align: text-bottom;
+              "
+              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img
+              style="
+                height: 16px !important;
+                margin-left: 3px;
+                vertical-align: text-bottom;
+              "
+              src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img
+              style="
+                height: 16px !important;
+                margin-left: 3px;
+                vertical-align: text-bottom;
+              "
+              src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+                                                                                               /></a>
+                    </div>
+            </div>
             <iframe data-testid="column" width="100%" height="100%" frameborder="0" src="https://hemicycle-pt.streamlit.app/?embed=true"></iframe>
+
         </div>
     </body>
 </html>
