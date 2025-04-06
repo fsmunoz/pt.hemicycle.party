@@ -1,148 +1,151 @@
 <!doctype html>
 <html lang=en>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta charset=utf-8>
-        <link rel="icon" type="image/png" href="/ap.png">
-        <title>Análise da actividade parlamentar</title>
-        <style type="text/css">
-         body, html
-         {
-             margin: 0; padding: 0; height: 100%; overflow: hidden;
-         }
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset=utf-8>
+    <link rel="icon" type="image/png" href="/ap.png">
+    <title>Análise da actividade parlamentar</title>
+    <style type="text/css">
+      body, html
+      {
+          margin: 0; padding: 0; height: 100%; overflow: hidden;
+      }
 
-         #content
-         {
-             position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
-         }
-         div[class^="embeddedAppMetaInfoBar"] {
-             visibility=hidden !important;
-         }
+      #content
+      {
+          position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
+      }
+      div[class^="embeddedAppMetaInfoBar"] {
+          visibility=hidden !important;
+      }
 
-        .hidefooter {
-            position: absolute;
-            width: 100%;
-            height: 35px;
-            min-height: 17px;
-            padding: 0px;
-            background: rgb(242,240,246);
-            right: 0px;
-            bottom: 0px;
-            z-index: 2;
-            display: flex;
-            justify-content:center;
-            align-items: center;
-        }
-	iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+      .hidefooter {
+          position: absolute;
+          width: 100%;
+          height: 35px;
+          min-height: 17px;
+          padding: 0px;
+          background: rgb(242,240,246);
+          right: 0px;
+          bottom: 0px;
+          z-index: 2;
+          display: flex;
+          justify-content:center;
+          align-items: center;
+      }
+      iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+      }
 
-        </style>
+    </style>
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWV0FX8T15"></script>
-        <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWV0FX8T15"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-         gtag('config', 'G-QWV0FX8T15');
-        </script>
-    </head>
-    <body>
-        <div id="content">
-            <div class="hidefooter">
-                <a href="https://www.gnu.org/licenses/gpl-3.0.html">
-                <img
-                    style="
-                           height: 16px !important;
-                           margin-left: 3px;
-                           vertical-align: text-bottom;
-                           "
-                    src="gpl.png"></img>
-                </a>
-                <a
-                    href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
-                    target="_blank"
-                    rel="license noopener noreferrer"
-                    style="display: inline-block"
+      gtag('config', 'G-QWV0FX8T15');
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="hidefooter">
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html">
+          <img
+            style="
+                   height: 16px !important;
+                   margin-left: 3px;
+                   vertical-align: text-bottom;
+                   "
+            src="gpl.png"></img>
+        </a>
+        <a
+          href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
+          target="_blank"
+          rel="license noopener noreferrer"
+          style="display: inline-block"
 
-                ><img
+          ><img
              style="
-               height: 16px !important;
-               margin-left: 3px;
-               vertical-align: text-bottom;
-             "
+		    height: 16px !important;
+		    margin-left: 3px;
+		    vertical-align: text-bottom;
+		    "
              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img
-             style="
-               height: 16px !important;
-               margin-left: 3px;
-               vertical-align: text-bottom;
-             "
-             src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img
-             style="
-               height: 16px !important;
-               margin-left: 3px;
-               vertical-align: text-bottom;
-             "
-             src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
-                                                                                              /></a>
-            </div>
-            <iframe id="streamlitFrame" frameborder="0"></iframe>
+												style="
+												       height: 16px !important;
+												       margin-left: 3px;
+												       vertical-align: text-bottom;
+												       "
+												src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img
+																						   style="
+																							  height: 16px !important;
+																							  margin-left: 3px;
+																							  vertical-align: text-bottom;
+																							  "
+																						   src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+																						   /></a>
+      </div>
+      <iframe id="streamlitFrame" frameborder="0"></iframe>
 
-	    <script>
-              document.addEventListener('DOMContentLoaded', function() {
-		  // Get the current path and search parameters
-		  const currentPath = window.location.pathname.replace(/^\//, ''); // Remove leading slash
-		  const currentSearch = window.location.search;
-		  
-		  // Construct the iframe src URL
-		  let iframeSrc = 'https://hemicycle-pt.streamlit.app/';
-		  
-		  // Add the path if it exists
-		  if (currentPath) {
-                      iframeSrc += currentPath;
-		  }
-		  
-		  // Add embed=true parameter and any existing search parameters
-		  if (currentSearch) {
-                      // If there are already search parameters, append embed=true
-                      iframeSrc += currentSearch + '&embed=true';
-		  } else {
-                      // If no search parameters, start with ?embed=true
-                      iframeSrc += '?embed=true';
-		  }
-		  
-		  // Set the iframe src
-		  document.getElementById('streamlitFrame').src = iframeSrc;
-		  
-		  // Handle browser history navigation
-		  window.addEventListener('popstate', function() {
-                      updateIframeSrc();
-		  });
-              });
-              
-              function updateIframeSrc() {
-		  const currentPath = window.location.pathname.replace(/^\//, '');
-		  const currentSearch = window.location.search;
-		  
-		  let iframeSrc = 'https://hemicycle-pt.streamlit.app/';
-		  if (currentPath) {
-                      iframeSrc += currentPath;
-		  }
-		  
-		  if (currentSearch) {
-                      iframeSrc += currentSearch + '&embed=true';
-		  } else {
-                      iframeSrc += '?embed=true';
-		  }
-		  
-		  document.getElementById('streamlitFrame').src = iframeSrc;
-              }
-	    </script>	    
-        </div>
-    </body>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the full URL path after domain
+            const fullPath = window.location.href.split(window.location.host)[1];
+            
+            // Construct the iframe src URL
+            let iframeSrc = 'https://hemicycle-pt.streamlit.app/';
+            
+            // Add any path or query parameters from the hash
+            if (window.location.hash) {
+                // Extract the virtual path from the hash (remove the # symbol)
+                const virtualPath = window.location.hash.substring(1);
+                
+                // Add the virtual path to the iframe src
+                if (virtualPath) {
+                    // Check if the virtual path already has a query parameter
+                    if (virtualPath.includes('?')) {
+                        iframeSrc += virtualPath + '&embed=true';
+                    } else {
+                        iframeSrc += virtualPath + '?embed=true';
+                    }
+                }
+            } else {
+                iframeSrc += '?embed=true';
+            }
+            
+            // Set the iframe src
+            document.getElementById('streamlitFrame').src = iframeSrc;
+            
+            // Handle hash changes
+            window.addEventListener('hashchange', updateIframeSrc);
+        });
+        
+        function updateIframeSrc() {
+            let iframeSrc = 'https://hemicycle-pt.streamlit.app/';
+            
+            if (window.location.hash) {
+                const virtualPath = window.location.hash.substring(1);
+        if (virtualPath) {
+        if (virtualPath.includes('?')) {
+        iframeSrc += virtualPath + '&embed=true';
+        } else {
+        iframeSrc += virtualPath + '?embed=true';
+        }
+        }
+        } else {
+        iframeSrc += '?embed=true';
+        }
+        
+        document.getElementById('streamlitFrame').src = iframeSrc;
+        }
+      </script>
+    </div>
+  </body>
 </html>
+
 
