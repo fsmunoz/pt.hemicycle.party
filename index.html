@@ -100,19 +100,31 @@
             // Construct the iframe src URL
             let iframeSrc = 'https://hemicycle-pt.streamlit.app/';
             
-            // Add any path or query parameters from the hash
+            // Modified URL construction logic
             if (window.location.hash) {
-                // Extract the virtual path from the hash (remove the # symbol)
                 const virtualPath = window.location.hash.substring(1);
+                let pathPart = virtualPath;
+                let hashPart = '';
+                const hashIndex = virtualPath.indexOf('#');
                 
-                // Add the virtual path to the iframe src
-                if (virtualPath) {
-                    // Check if the virtual path already has a query parameter
-                    if (virtualPath.includes('?')) {
-                        iframeSrc += virtualPath + '&embed=true';
+                if (hashIndex !== -1) {
+                    pathPart = virtualPath.substring(0, hashIndex);
+                    hashPart = virtualPath.substring(hashIndex + 1);
+                }
+
+                if (pathPart) {
+                    if (pathPart.includes('?')) {
+                        pathPart += '&embed=true';
                     } else {
-                        iframeSrc += virtualPath + '?embed=true';
+                        pathPart += '?embed=true';
                     }
+                    iframeSrc += pathPart;
+                } else {
+                    iframeSrc += '?embed=true';
+                }
+
+                if (hashPart) {
+                    iframeSrc += '#' + hashPart;
                 }
             } else {
                 iframeSrc += '?embed=true';
@@ -124,28 +136,43 @@
             // Handle hash changes
             window.addEventListener('hashchange', updateIframeSrc);
         });
-        
+
         function updateIframeSrc() {
             let iframeSrc = 'https://hemicycle-pt.streamlit.app/';
             
+            // Modified URL construction logic
             if (window.location.hash) {
                 const virtualPath = window.location.hash.substring(1);
-        if (virtualPath) {
-        if (virtualPath.includes('?')) {
-        iframeSrc += virtualPath + '&embed=true';
-        } else {
-        iframeSrc += virtualPath + '?embed=true';
-        }
-        }
-        } else {
-        iframeSrc += '?embed=true';
-        }
-        
-        document.getElementById('streamlitFrame').src = iframeSrc;
+                let pathPart = virtualPath;
+                let hashPart = '';
+                const hashIndex = virtualPath.indexOf('#');
+                
+                if (hashIndex !== -1) {
+                    pathPart = virtualPath.substring(0, hashIndex);
+                    hashPart = virtualPath.substring(hashIndex + 1);
+                }
+
+                if (pathPart) {
+                    if (pathPart.includes('?')) {
+                        pathPart += '&embed=true';
+                    } else {
+                        pathPart += '?embed=true';
+                    }
+                    iframeSrc += pathPart;
+                } else {
+                    iframeSrc += '?embed=true';
+                }
+
+                if (hashPart) {
+                    iframeSrc += '#' + hashPart;
+                }
+            } else {
+                iframeSrc += '?embed=true';
+            }
+
+            document.getElementById('streamlitFrame').src = iframeSrc;
         }
       </script>
     </div>
   </body>
 </html>
-
-
